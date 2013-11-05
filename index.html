@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet"  href="css/jquery.mobile-1.3.2.min.css"/>
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript" src="js/index.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/database.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/file.js" charset="UTF-8"></script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+		<title>消防扫描</title>
+
+	</head>
+	<body>
+
+		<div>
+			<div data-theme="c" data-role="header" data-position="fixed">
+				<h1> 青岛鼎信现场扫描软件 </h1>
+			</div>
+
+			<div data-role="content">
+
+				<div data-role="fieldcontain" data-controltype="selectmenu">
+					<label for="Dev_UC" style="font-size: 28px"> 设备UC： </label>
+					<select  id="Dev_UC" data-theme="e" onchange="SelUcChange()">
+				
+					</select>
+				</div>
+				<div data-role="fieldcontain" data-controltype="selectmenu">
+					<label for="Dev_CC" style="font-size: 25px"> 描述信息： </label>
+					<select id="Dev_CC" name="" data-theme="e" onchange="SelCcChange()" style="font-size: 25px">
+
+					</select>
+				</div>
+				<div data-role="fieldcontain" data-controltype="textinput"  >
+					<label for="Dev_ID" style="font-size: 28px"> 设备ID： </label>
+					<input name="" id="Dev_ID" placeholder=""  type="number" style="font-size: 25px"  >
+				</div>
+				<!--<div class="ui-grid-a">
+				<div class="ui-block-a">
+				<a id="Dev_Scan" data-role="button" data-theme="b" href="#" onclick="scanner()" data-icon="check" data-iconpos="top"> 扫描二维码 </a>
+				</div>
+				<div class="ui-block-b">
+				<a id="Dev_OK" data-role="button" data-theme="b" href="#" onclick="saveDB()" data-icon="check" data-iconpos="top"> 保存 </a>
+				</div>
+				</div>-->
+				<br>
+				<br>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<div style=" text-align:center">
+							<img style="width: 80%; height: width" src="img/scan.png" onclick="scanner()">
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<div style=" text-align:center">
+							<img style="width: 80%; height: width" src="img/save.png" onclick="saveDB()">
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a href="123">
+						<div style=" text-align:center">
+							<img style="width: 80%; height: width" src="img/filein.png" onclick="fileIn()" >
+						</div> </a>
+					</div>
+					<div class="ui-block-b">
+						<div style=" text-align:center">
+							<img style="width: 80%; height: width" src="img/fileout.png" onclick="queryFileUrl()">
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<!--<div class="ui-grid-a">
+				<div class="ui-block-a">
+				<a id="File_In" data-role="button" data-theme="b" href="#" onclick="fileIn()" data-icon="check" data-iconpos="top"> 导入工程信息 </a>
+				</div>
+				<div class="ui-block-b">
+				<a id="File_Out" data-role="button" data-theme="b" href="#" onclick="queryFileUrl()" data-icon="check" data-iconpos="top"> 导出工程信息 </a>
+				</div>
+				</div>-->
+			</div>
+		</div>
+		<script type="text/javascript">
+			app.initialize();
+		</script>
+	</body>
+</html>
